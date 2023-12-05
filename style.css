@@ -1,0 +1,787 @@
+/*saját fontkészlet---------------------------------------------*/
+@font-face {
+    font-family: "szoveg";
+    src: url('fonts/Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: "cim";
+    src: url('fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+    font-family: "menu";
+    src: url('fonts/Raleway-Heavy.ttf');
+}
+
+@font-face {
+    font-family: "cimsor";
+    src: url('fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+    font-family: "lablec";
+    src: url('fonts/Raleway-Light.ttf');
+}
+@font-face {
+    font-family: "idezet";
+    src: url('fonts/Raleway-Thin.ttf');
+}
+
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+/*Ez biztosítja, hogy az elemekhez tartozó padding és border a width és height értékekhez is.
+    Ennek hiányában az elemek átcsúszhatnak a következő sorba*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    /*finomabban görög le*/
+}
+
+body {
+    background-color: #b5e1f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+    line-height: 1.5em;
+    /*másfeles sorköz*/
+    font-family: "szoveg";
+    text-align: left;
+    /*alapértelmezett is, balra igazított szöveg*/
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/*header stílusa*/
+.fejlec {
+    background-color: white;
+    color: rgb(48, 137, 181);
+    width: 100%;
+    height: 347px;
+    justify-content: center;
+    margin: 0;
+    padding: 30px 0 0 0;
+    /*fejléc ne legyen rögtön az oldal szélén, hanem legyen körülvéve üres résszel*/
+    text-align: center;
+}
+
+
+/*footer stílusa*/
+footer {
+    background-color: #42abe086;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+    padding: 0 15px 5px;
+    border-radius: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: fit-content;
+    font-size: 0.7em;
+    font-family: "lablec";
+    text-align: center;
+}
+
+
+/*menü-------------------------------*/
+
+
+#menu a {
+    position: absolute;
+    left: -160px;
+    /*legyen kezdetben kívül a képernyőn*/
+    padding: 15px;
+    transition: 0.5s;
+    width: 180px;
+    background-color: #42abe0d4;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    font-size: 19px;
+    /*nagyobb*/
+    font-family: "menu";
+    text-align: left;
+    text-decoration: none;
+    /*ne legyen aláhúzás*/
+}
+
+#menu a:hover {
+    background-color: #267ba6;
+    /*ha fölé megyek egérrel, sötétebb lesz a színe*/
+    left: 0;
+    /*jelenjenek meg a menüszalagok, ne legyenek már eltolva*/
+}
+
+/* The about link: 20px from the top with a green background */
+#hirek {
+    top: 15px;
+}
+
+#palyazat {
+    top: 75px;
+}
+
+#gyik {
+    top: 158px;
+}
+
+#usa {
+    top: 218px;
+}
+
+#bemutatkozas {
+    top: 278px;
+}
+
+
+
+
+/**/
+
+.reszponziv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*fehér dobozok középen legyenek*/
+
+
+
+.jobboldal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin:0;
+    padding: 10px;
+}
+
+.flex-container,
+.oszlopok,
+aside {
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 97%;
+    margin: 10px;
+}
+
+.flex-container{
+    align-items: center;
+}
+
+
+.sorban {
+    display: block;
+    align-items: flex-start;
+}
+
+article {
+    justify-content: center;
+    padding: 10px;
+    text-align: justify;
+}
+
+p {
+    margin: 0;
+    padding: 0 20px;
+    text-align: left;
+}
+.mese{
+    margin-bottom:20px;
+}
+
+
+a {
+    color: #267ba6;
+    text-decoration: none;
+}
+
+a:hover {    
+    color: rgb(3, 52, 85);
+}
+
+
+
+.hirek {
+    background: white;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 2%;
+    width: 100%;
+}
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #267ba6b7;
+    font-size: 2em;
+    font-family: "cim";
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.kozepso-cim header {
+    border: 4px solid #267ba6b7;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.kozepso-cim {
+    text-decoration: none;
+}
+
+.kozepso-cim header:hover {
+    border: 4px solid #267ba6;
+}
+
+.kozepso-cim:hover h1 {
+    color: #267ba6;
+}
+
+h2,
+.kerdesek {
+    font-size: 1.2em;
+    font-family: "cimsor";
+    margin: 10px;
+    padding: 2px 15px;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.kerdesek {
+    text-align: left;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-family: "cimsor";
+    text-transform: uppercase;
+    margin: 0;
+    padding: 15px;
+    align-items: center;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 315px;
+    /*ezen még állítani - reszponzívra is!!*/
+}
+
+.nagykep {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+}
+
+
+.zoom {
+    display: flex;
+    align-items: center;
+    min-width: .5vw;
+    max-width: 80%;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    transition: transform 1s;
+    border-radius: 4px;
+}
+
+.zoom:hover {
+    transform: scale(1.03);
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.7em;
+    font-style: italic;
+    line-height: 1em;
+    margin:10px;
+}
+
+
+
+
+
+/*nem vagyok benne biztos, hogy ez kell*/
+
+
+.oszlop {
+    padding: 5px;
+    border: 2px solid #a9a9a9;
+    border-radius: 4px;
+    box-shadow: 6px 6px #a9a9a9;
+    /*doboz árnyéka*/
+    margin: 20px;
+}
+
+
+hr {
+    border:2px solid #a9a9a9; 
+    border-radius: 4px;
+     width: 98%;
+}
+
+
+/*galleria------------- reszponziv legyen!!!*/
+
+.galleriam, .oldalgalleriam {
+    display: flex;
+    text-align:center;
+    justify-content: center;
+    margin: 10px;
+    /* Center the gallery horizontally */
+    height: 95vh; /* Set the height as a percentage of the viewport width */
+    max-height: 320px;
+    width: 70vw;
+    /* Make the gallery container responsive */
+    max-width: 600px;
+
+    
+}
+
+/* Additional styling for images within the gallery */
+.galleriam img,.oldalgalleriam img {
+    max-width: 100%;
+    /* Ensure images don't exceed the container width */
+    max-height: auto;
+    /* Maintain aspect ratio of images */
+}
+
+
+
+
+/*TÁMOGATÁS*/
+aside {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    /*ez miz jelent pontosan*/
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    max-width: fit-content;
+    text-align: center;
+}
+footer div{
+    padding-top:10px;
+}
+
+footer div p, footer div h2{
+    text-align: center;
+}
+
+footer h2{
+    margin-bottom:0px;
+}
+footer div button{
+    margin-top:10px;
+}
+
+.fizetes {
+    background-color: #a9a9a9;
+    /*ide rendes színt*/
+    color: black;
+    display: block;
+    flex-wrap: nowrap;
+    margin: 10px;
+    padding: 6px;
+    border-radius: 5px;
+    line-height: 2em;
+    text-decoration: none;
+}
+
+.paypal {
+    height: 18px;
+}
+
+.kozepre{
+    text-align: center;
+}
+
+
+/*socialmedia*/
+.ikonok {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+}
+
+
+.ikonok a {
+    display: inline-block;
+    padding: 20px;
+}
+
+.ikonok a img {
+    -webkit-transition: all 500ms ease;
+    /*mit jelent pontosan és mire jó*/
+    transition: all 500ms ease;
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+
+.ikonok a:hover img {
+    transform: scale(1.4);
+}
+
+.socialmedia {
+    background-color: #267ba6b7;
+    /*ide rendes színt*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.socials {
+    cursor: pointer;
+    height: 30px;
+}
+
+
+/*hírlevél*/
+.hirlevel,
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "szoveg";
+    margin: 0;
+    padding: 10px;
+}
+
+.urlap {
+    background-color: #c1d3dc67;
+    font-family: "szoveg";
+    margin: 6px;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+}
+
+.kicsi {
+    font-size: 0.8em;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.felirat {
+    padding: 6px;
+}
+
+
+
+.gomb {
+    background-color: #42abe0d4;
+    color: white;
+    position: relative;
+    text-align: center;
+    font-size: 1em;
+    font-family: "szoveg";
+    text-decoration: none;
+    padding: 10%;
+    width: max-content;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    overflow: hidden;
+    /*ez mit jelent*/
+    cursor: pointer;
+    /*mutató kis kezecske jelenik meg*/
+    border: none;
+    border-radius: 5px;
+}
+
+.gomb:hover {
+    background-color: #267ba6;
+}
+
+
+
+
+/*Vissza a tetejére gomb*/
+#tetejere {
+    background-color: rgba(48, 137, 181, 0.605);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 130px;
+    height: 30px;
+    font-size: 12px;
+    font-family: "szoveg";
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+#tetejere:hover {
+    background-color: rgb(3, 52, 85);
+    color: white;
+}
+
+.visszanyil {
+    max-height: 10px;
+}
+
+
+
+
+
+
+/*bemutatkozashoz*/
+.idezet{
+    font-family: "idezet";
+    font-size: 1.1em;
+    font-weight:bold;
+    font-style: italic;
+    text-align: center;
+    margin:0 70px;
+    padding:10px;
+}
+
+.fontos{
+    font-weight: bold;
+    font-size: 1.2em;
+    color:rgb(3, 52, 85);
+}
+
+
+
+
+
+
+
+/*---reszponzivitás-----------------------------------------------------------------------
+
+
+/*A @media szabályt használja arra, hogy olyan változásokat írjon le, amelyek csak bizonyos feltételek mellett érvényesek.*/
+
+@media only screen and(min-width: 600px) {
+	/* tablet */
+}
+
+
+@media only screen and (min-width: 768px) {
+    /* számítógép */
+
+
+    /*menu**/
+    #menu a {
+        left: 0;
+        width: 220px;
+        text-align: center;
+    }
+
+    #gyik {
+        top: 135px;
+    }
+
+    #usa {
+        top: 195px;
+    }
+
+    #bemutatkozas {
+        top: 255px;
+    }
+
+
+
+
+
+
+    /*oszlopok*/
+    .oszlopok {
+        display: flex;
+        flex-basis: 33.33%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    }
+
+    .oszlop {
+        padding: 3%;
+        width: 50%;
+    }
+
+
+    .kontent {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    /*Támogatás mellette legyen*/
+
+    .reszponziv {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+    }
+.jobboldal{
+    flex-basis:70%;
+    max-width: 65%;
+}
+
+    aside {
+        max-width: 30%;    }
+
+    .hirek {
+        width: 100%;
+    }
+
+    .socialmedia {
+        flex-direction: row;
+    }
+
+    .ikonok {
+        width: 50%;
+    }
+
+    .galleriam{
+        max-height: 580px;
+        max-width: 900px;
+    }
+.oldalgalleriam{
+    max-height: 280px;
+    max-width: 300px;
+}
+
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    footer div p, footer div h2{
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+/*ez a laptopos nézet lezárása*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*KÉPEKET JÓL RENDEZNI!!!!!!!!!*/
+/*.logo {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:50%;}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Linkek látszólagos osztályai:
+◼ a:link – link stílusa
+◼ a:visited – látogatott link stílusa
+◼ a:active – aktív link stílusa
+ aktuális menüpont kialakításakor NEM ezt fogjuk 
+használni!
+◼ a:hover – a link stílusa, mikor az egérrel 
+rámutatunk
+◼ menü kialakításakor fogjuk használni
+*/
+
+/* TO DOs:
+    - szövegformázás
+    - háttér
+*/
+
+
+
+/*
+@media screen and (min-width: 800px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    #main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    #article {
+        flex: 1 1 75%;
+    }
+
+    #aside {
+        flex: 1 1 25%;
+    }
+}
+*/

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+
+<head>
+  <link rel="stylesheet" href="style.css"> <!--itt van a stíluslap-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- hogy reszponzív legyen az oldal:
+    viewport:
+      - a weboldal felhasználó által látható területe
+      - különböző kijelző méreteknél változik
+      - közli a mobil böngészővel hogy mobilképes az oldal, és ne a teljes verziót nyomja össze
+    width=device-width:
+      - ezáltal az oldal width tulajdonsága követi a kijelző szélességét
+    initial-scale=1.0
+      - meghatározza, hogy mekkora nagyítást (zoomot) használjon az oldal, amikor először töltődik be
+    Ha az elem 100% széles, akkor:
+      - 1vh = 1/100 relatívan a viewport magasságához képest
+      - 1vw = 1/100 relatívan a viewport szélességéhez képest
+  -->
+  <meta charset="utf-8">
+  <meta name="author" content="Veress Mária">
+  <meta name="description" content="Global Outreach Hungary weboldala (html beadandó)">
+  <link rel="icon" href="images/favicon.ico " type="image/x-icon"> <!--favicon típusa-->
+  <title> Global Outreach Magyarország | Let&#39s build a civilization of love </title> <!--aposztróf: &#39-->
+  <script src="script.js"></script>
+
+  <script src="jquery-3.7.1.js"></script>
+  <script src="galleria-1.6.1/dist/galleria.js"></script>
+  <script src="galleria-1.6.1/dist/themes/classic/galleria.classic.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+          $('#fotoalbum').galleria(
+              width = 200,
+              height = 200
+          );
+      });
+  </script>
+  <style>
+      .galleria-container{
+          background-color: #a9a9a9;
+          border-radius: 4px;
+      }
+      
+  </style>
+
+
+  <script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#feliratkozas").validate({
+        //ide jön a rules és a messages rész
+        rules: {
+          knev: "required",
+          email1: {
+            required: true,
+            email: true
+          },
+          email2: {
+            required: true,
+            email: true,
+            equalToEmail: "#email1"
+          },
+          jelszo: {
+            required: true,
+            minlength: 8
+          },
+          elfogad: {
+            required: true,
+          },
+        },
+        messages: {
+          knev: " Írd be a keresztneved!",
+        jelszo: {
+            required: " Add meg a jelszavad!",
+            minlength: " A jelszavad legalább 8 karakter hosszú legyen!"
+          },
+          email1: " Kérlek valós email címet adj meg!",
+          email2: {
+            equalToEmail: "A két email cím nem egyezik."
+          },
+          elfogad: " Kérlek fogadd el a feltételeinket!",
+        }
+
+      });
+    });
+  </script>
+  <style>
+    label.error {
+    color: #B55567;}
+    </style>
+</head>
+
+<body>
+  <header class="fejlec">
+    <a title="Global Outreach" href="https://globaloutreach.hu">
+      <img src="images/go.jpg" alt="Global Outreach logo" class="logo"><br>
+    </a>
+  </header>
+
+
+
+
+
+  <div id="menu">
+    <a href="hirek.html" id="hirek">
+      Hírek</a>
+    <a href="palyazat.html" id="palyazat">
+      PÁLYÁZAT 2024/25</a>
+    <a href="gyik.html" id="gyik">
+      GYIK</a>
+    <a href="https://www.globaloutreachprogram.com/" id="usa">
+      GO USA</a>
+    <a href="bemutatkozas.html" id="bemutatkozas">
+      Bemutatkozás</a>
+  </div>
+
+
+
+
+
+
+  <div class="reszponziv">
+    <div class="jobboldal">
+      <div class="flex-container"> <!---vagy <article> div class konténer helyett-->
+        <article>
+          <header class="nagy-cim"> <!--vagy <header>-->
+            <h1>GLOBAL OUTREACH MAGYORORSZÁG</h1>
+          </header>
+          <figure class="nagykep">
+            <a href="bemutatkozas.html">
+              <img src="images/alumni.jpg" alt="Global Outreach közösség" class="zoom">
+            </a>
+            <figcaption> Global Outreach közösség - Kecskemét (2022)</figcaption>
+          </figure>
+          <section class="foszoveg">
+            <div class="kozepso-szoveg"> <!--vagy <section>-->
+              <p>A Global Outreach Program az Egyesült Államokban született az 1990-es évek elején. Az alapítók, Fr.
+                Mike
+                Carroll
+                katolikus pap és Mary Piette programigazgató azt tűzték ki célul, hogy a rendszerváltást követően
+                segítsék
+                a
+                közép-kelet európai, volt szocialista országok katolikus egyházainak újboli megerősödését. Ezt azzal
+                valósítják
+                meg, hogy katolikus fiataloknak egyéves tanulmányi lehetőséget biztosítottak, amelynek keretében a
+                sikeres
+                pályázók egy amerikai katolikus középiskolába járhatnak, és a tanévre egy katolikus család az
+                otthonába
+                fogadja
+                őket.</p>
+            </div>
+          </section>
+        </article>
+      </div>
+      <div class="flex-container">
+        <article class="sorban">
+          <a href="bemutatkozas.html#tortenet">
+            <h2>Történet</h2>
+            <p>
+              A Global Outreach története 1991-ben kezdődött, amikor Father Mike Carroll először látogatott
+              Csehországba.[…]
+            </p>
+          </a>
+          <hr>
+          <a href="bemutatkozas.html#misszio">
+            <h2>Misszió</h2>
+            <p>
+              A Global Outreach elkötelezett a „szeretet civilizációjának” („civilization of love”)
+              építésében[…]
+            </p>
+          </a>
+          <hr>
+          <a href="bemutatkozas.html#vizio">
+            <h2>Vízió</h2>
+            <p>
+              A Global Outreach az Egyesült Államok és Közép-/Kelet-Európa középiskolái és más egyházi szervezetek
+              közötti katolikus cserediákprogram révén éri el küldetését.[…]
+            </p>
+          </a>
+        </article>
+      </div>
+    </div>
+
+
+
+    <aside>
+      <div class="flex-container tamogatas">
+        <h3>TÁMOGATÁS</h3>
+      <p class="kozepre"> Pénzügyi hozzájárulás a Global Outreach Program javára: <br>
+        <a href="https://www.paypal.com/us/fundraiser/charity/1674617" class="fizetes">
+          <img src="images/paypal.svg" alt="Paypal ikon" class="paypal">
+          PayPal fiókon keresztül
+        </a>
+      </p>
+      <p class="kozepre"><i>Hálásan köszönünk mindennemű pénzügyi támogatást és adományt.</i></p>
+    </div>
+<a href="bemutatkozas.html">
+      <div class="flex-container oldalgalleria">
+        <section id="fotoalbum" class="oldalgalleriam">
+          <img src="images/alumni.jpg" alt="Kecskemét (2022)" title="Global Outreach közösség">
+          <img src="images/classof23.jpg" alt="Orientation week" title="2022/23-as évfolyam diákjai">
+          <img src="images/classof22-1.jpeg" alt="Orientation week" title="2021/22-es évfolyam diákjai">
+          <img src="images/classof22-2.jpeg" alt="Graduation ceremony" title="2021/22-es évfolyam diákjai">
+          <img src="images/classof20.jpg" alt="Graduation ceremony"
+              title="2019/20-as évfolyam magyar diákjai">
+          <img src="images/classof19.jpg" alt="Mid Year Gathering" title="2018/19-es évfolyam diákjai">
+          <img src="images/hungarian-alumni.jpg" alt="Budapest (2022)" title="Magyar alumni közösség">
+      </section>
+      </div>
+    </a>
+
+    </aside>
+
+
+  </div>
+
+
+  <div class="hirek">
+    <div>
+      <article>
+        <a href="hirek.html" class="kozepso-cim">
+          <header>
+            <h1>HÍREK</h1>
+          </header>
+        </a>
+        <div class="oszlopok">
+          <section class="oszlop">
+            <a href="hirek.html#csaladi_nap_hir">
+              <h3>Családi nyílt nap 2023</h3>
+              <p>Szeretnél egy évet egy katolikus gimnáziumban tanulni az Egyesült Államokban? Érdekel, milyen az
+                amerikai
+                családok élete? Szeretnél életre szóló barátságokat kötni amerikai és más közép-európai katolikus
+                fiatalokkal?Jelentkezz a Global Outreach katolikus cserediák programra! Kiknek a jelentkezését
+                várjuk?Olyan
+                idén 10. osztályos katolikus diákokét, akik számára fontos a hitük, aktívan részt vesznek a saját
+                plébániájuk közösségi életében […]</p>
+            </a>
+          </section>
+          <section class="oszlop">
+            <a href="palyazat.html#palyazat_top">
+              <h3>GLOBAL OUTREACH PÁLYÁZAT-2024/25</h3>
+              <p>
+                Kiírásra került a 2024/25 évre vonatkozó Global Outreach Pályázat. Fontos kiemelnünk, hogy a
+                magyarországi
+                honlapunk arra szolgál, hogy magyar nyelven is tájékoztatást adjon a jelentkező diákoknak, viszont arra
+                kérünk mindenkit, hogy elsősorban az Amerikai vezetőség által fenntartott honlapon tájékozódjanak. Ezt a
+                honlapot a “Go USA” menüpont alatt érik el. Kérünk minden jelentkezőt, hogy a következő […]</p>
+            </a>
+          </section>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="socialmedia">
+    <h3>Kövess minket itt:</h3>
+    <div class="ikonok">
+      <a title="Facebook" href="https://www.facebook.com/globaloutreachprogram">
+        <img src="images/facebook.svg" alt="Facebook logo" class="socials">
+      </a>
+      <a title="Instagram" href="https://www.instagram.com/globaloutreachprogram/">
+        <img src="images/instagram.svg" alt="Instagram logo" class="socials">
+      </a>
+      <a title="Youtube" href="https://www.youtube.com/channel/UC5BIybxUOq9OQGPoqm492rQ">
+        <img src="images/youtube.svg" alt="Youtube logo" class="socials">
+      </a>
+    </div>
+  </div>
+
+
+  
+
+  <div class="flex-container">
+    <div class="hirlevel">
+      <h3>Iratkozz fel hírlevelünkre:</h3>
+      <p>Hogy nehogy lemaradj a legfontosabb információkról.</p>
+      <p class="kicsi">A *-gal jelölt mezők kitöltése kötelező.</p>
+    </div>
+    <div>
+      <form id="feliratkozas" method="post" action="http://szamtud.uni-corvinus.hu/receive.php" novalidate>
+        <label><input type="text" name="vnev" class="urlap" placeholder="Vezetéknév" size="15"></label>
+        <label><input type="text" name="knev" class="urlap" placeholder="Keresztnév*" size="15" required></label>
+        <label><input type="email" name="email1" id="email1" class="urlap" placeholder="E-mail cim*" size="25" required></label>
+        <label><input type="email" name="email2" id="email2" class="urlap" placeholder="E-mail cim még egyszer*" size="25"
+            required></label>
+        <label><input type="password" name="jelszo" class="urlap" placeholder="Jelszó" size="15" required></label>
+        <!---felhasznalasi feltetelek:-->
+        <p><label for="elfogad">Elfogad </label>
+          <input type="checkbox" name="elfogad" class="urlap">
+      </p>
+        <label>
+          <p class="felirat">
+            <input type="submit" name="feliratkozott" class="gomb" value="Feliratkozom">
+          </p>
+        </label>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <p>© Készítette: Veress Mária 2023.</p>
+    </div>
+    <div>
+      <h2>Kapcsolat:</h2>
+      <p><b>
+          <a href="mailto:info@globaloutreach.hu">info@globaloutreach.hu<br>
+            <a href="https://www.globaloutreachprogram.com/">https://www.globaloutreachprogram.com/</a><br>
+            <a href="tel:+36 20 479 0566">+36 20 479 0566</a>
+        </b></p>
+    </div>
+
+    <div>
+      <button onclick="fel()" id="tetejere" title="Vissza a tetejére">
+        <img src="images/visszanyil.png" class="visszanyil" alt="Felfele nyil">
+        Vissza a tetejére
+        <img src="images/visszanyil.png" class="visszanyil" alt="Felfele nyil">
+      </button>
+    </div>
+  </footer>
+
+  <script>
+    //a gombom://
+    let felgomb = document.getElementById("tetejere");
+    function fel() {
+      document.body.scrollTop = 0; //az oldal tetejére görget//
+      document.documentElement.scrollTop = 0; //ezt pontosan nem tudom//
+    }
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+action: Ide küldjük a beírt értékeket
+
+ <form method="post" action="http://szamtud.uni-corvinus.hu/receive.php">
+    <input class="mytextbox" type="text" name="nev" required><br>
+    <label for="veznev"> Vezetéknév: </label> 
+    <input type="text" name="veznev" id="veznev">
+    <input type="email">
+    <input type="password" name="jelszo">
+    <textarea name="szoveg"> </textarea>
+ -->
+
+<!---
+    talán:
+    <input type="checkbox">
+    <input type="radio">
+    <select> </select>
+
+    <label>Mi a kedvenc ételed?<input type="text" 
+        list="pelda" name="etel" placeholder="Írd be a 
+        kedvencedet." autofocus> autofocus: ez lesz az aktív mező
+        <datalist id="pelda">
+        <option value="pizza">
+        <option value="palacsinta">
+        <option value="csokitorta">
+        <option value="káposztás tészta">
+        </datalist> </label>
+    <input class= "mybutton" type="submit" value="Elküld">
+        <input type="reset"><br>
+
+
+
+</form>
+
+-->
+
+
+
+
+
+
+<!-- Fejlesztés alatt érdemes a disable cache-t kijelölni-->
+
+
+
+
+
+
+
+<!-- CHECKLIST:
+        - hivatkozások (GO logora kattintáskor, social media)
+        - képek (3. előadás diasor hogy ne legyen torzult)
+            src=”images/kep.gif” alt= !!kitölteni
+            pl mobilon nem ugyanazt a képet mutatom, hanem egy „rázoomoltat”
+            képre kattintva link
+
+        - horgony a GYIK-nél
+        - felsorolás valahova
+            
+        Back to Top" button
+        hamburger menu
+        mobile menu
+        - táblázat használata?
+    -->
+
+
+
+
+<!-- ------------------------------------------------------------------
+TEENDŐK MÉG VELE:
+
+- TESZTELNI: Chrome, Edge, Firefox, Safari, Opera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->
