@@ -52,6 +52,7 @@
         //ide jön a rules és a messages rész
         rules: {
           knev: "required",
+          vnev: "required",
           email1: {
             required: true,
             email: true
@@ -68,8 +69,10 @@
           elfogad: {
             required: true,
           },
+          
         },
         messages: {
+          vnev: "<br/> Írd be a vezetékneved!",
           knev: "<br/> Írd be a keresztneved!",
         jelszo: {
             required: "<br/> Add meg a jelszavad!",
@@ -99,20 +102,16 @@
     </a>
   </header>
 
-
-
-
-
   <div id="menu">
-    <a href="hirek.html" id="hirek">
+    <a href="hirek.html" id="hirek" class="animation">
       Hírek</a>
-    <a href="palyazat.html" id="palyazat">
+    <a href="palyazat.html" id="palyazat" class="animation">
       PÁLYÁZAT 2024/25</a>
-    <a href="gyik.html" id="gyik">
+    <a href="gyik.html" id="gyik" class="animation">
       GYIK</a>
-    <a href="https://www.globaloutreachprogram.com/" id="usa">
+    <a href="https://www.globaloutreachprogram.com/" id="usa" class="animation">
       GO USA</a>
-    <a href="bemutatkozas.html" id="bemutatkozas">
+    <a href="bemutatkozas.html" id="bemutatkozas" class="animation">
       Bemutatkozás</a>
   </div>
 
@@ -125,17 +124,17 @@
     <div class="jobboldal">
       <div class="flex-container"> <!---vagy <article> div class konténer helyett-->
         <article>
-          <header class="nagy-cim"> <!--vagy <header>-->
+          <header>
             <h1>GLOBAL OUTREACH MAGYORORSZÁG</h1>
           </header>
-          <figure class="nagykep">
+          <figure>
             <a href="bemutatkozas.html">
               <img src="images/alumni.jpg" alt="Global Outreach közösség" class="zoom">
             </a>
             <figcaption> Global Outreach közösség - Kecskemét (2022)</figcaption>
           </figure>
-          <section class="foszoveg">
-            <div class="kozepso-szoveg"> <!--vagy <section>-->
+          <section>
+            <div>
               <p>A Global Outreach Program az Egyesült Államokban született az 1990-es évek elején. Az alapítók, Fr.
                 Mike
                 Carroll
@@ -154,8 +153,8 @@
           </section>
         </article>
       </div>
-      <div class="flex-container">
-        <article class="sorban">
+      <div class="flex-container sorban">
+        <article > <!---kell?-->
           <a href="bemutatkozas.html#tortenet">
             <h2>Történet</h2>
             <p>
@@ -281,17 +280,20 @@
     </div>
     <div>
       <form id="feliratkozas" method="post" action="http://szamtud.uni-corvinus.hu/receive.php" novalidate>
-        <label><input type="text" name="vnev" class="urlap" placeholder="Vezetéknév" size="15"></label>
+        <div>
+          <label><input type="text" name="vnev" class="urlap" placeholder="Vezetéknév" size="15" required></label>
         <label><input type="text" name="knev" class="urlap" placeholder="Keresztnév*" size="15" required></label>
         <label><input type="email" name="email1" id="email1" class="urlap" placeholder="E-mail cim*" size="25" required></label>
         <label><input type="email" name="email2" id="email2" class="urlap" placeholder="E-mail cim még egyszer*" size="25"
             required></label>
         <label><input type="password" name="jelszo" class="urlap" placeholder="Jelszó" size="15" required></label>
-       <div>
+       </div>
+        <div>
         <p><b>Milyen hírek érdeklik?</b></p> 
-        <label><p><input type="radio" name="tipus" value="szuloinfo" class="urlap">Szülői információk</p></label>
-        <label><p><input type="radio" name="tipus" value="diakinfo" class="urlap">Cserediák információk</p></label>
-        </div>
+        <label><p><input type="radio" name="infok" value="mindeninfo" class="urlap" checked>Mindenféle</p></label>  
+        <label><p><input type="radio" name="infok" value="szuloinfo" class="urlap">Csak zülői információk</p></label>
+        <label><p><input type="radio" name="infok" value="diakinfo" class="urlap">Csak cserediák információk</p></label>
+      </div>
         <!---felhasznalasi feltetelek:-->
         <div><label>Elfogadom a feltételeket.<input type="checkbox" name="elfogad" class="urlap"></label></div>
           
@@ -301,7 +303,7 @@
             <input type="submit" name="feliratkozott" class="gomb" value="Feliratkozom">
           </p>
         </label>
-      </form>
+      </form>    
     </div>
   </div>
 
@@ -318,7 +320,7 @@
         </b></p>
     </div>
 
-    <div>
+    <div> <!--VISSZA A TETEJÉRE GOMB A LÁBLÉCBEN-->
       <button onclick="fel()" id="tetejere" title="Vissza a tetejére">
         <img src="images/visszanyil.png" class="visszanyil" alt="Felfele nyil">
         Vissza a tetejére
