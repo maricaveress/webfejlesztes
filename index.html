@@ -59,7 +59,7 @@
           email2: {
             required: true,
             email: true,
-            equalToEmail: "#email1"
+            equalTo: "#email1"
           },
           jelszo: {
             required: true,
@@ -70,18 +70,19 @@
           },
         },
         messages: {
-          knev: " Írd be a keresztneved!",
+          knev: "<br/> Írd be a keresztneved!",
         jelszo: {
-            required: " Add meg a jelszavad!",
-            minlength: " A jelszavad legalább 8 karakter hosszú legyen!"
+            required: "<br/> Add meg a jelszavad!",
+            minlength: "<br/> A jelszavad legalább 8 karakter hosszú legyen!"
           },
-          email1: " Kérlek valós email címet adj meg!",
+          email1: "<br/> Kérlek valós email címet adj meg!",
           email2: {
-            equalToEmail: "A két email cím nem egyezik."
+            required: "<br/> Kérlek add meg az email címed még egyszer!",
+            email: "<br/> Kérlek valós email címet adj meg!",
+          equalTo: "<br/> A két email cím nem egyezik."
           },
-          elfogad: " Kérlek fogadd el a feltételeinket!",
-        }
-
+          elfogad: "<br/> Kérlek fogadd el a feltételeinket!",
+        },
       });
     });
   </script>
@@ -286,10 +287,15 @@
         <label><input type="email" name="email2" id="email2" class="urlap" placeholder="E-mail cim még egyszer*" size="25"
             required></label>
         <label><input type="password" name="jelszo" class="urlap" placeholder="Jelszó" size="15" required></label>
+       <div>
+        <p><b>Milyen hírek érdeklik?</b></p> 
+        <label><p><input type="radio" name="tipus" value="szuloinfo" class="urlap">Szülői információk</p></label>
+        <label><p><input type="radio" name="tipus" value="diakinfo" class="urlap">Cserediák információk</p></label>
+        </div>
         <!---felhasznalasi feltetelek:-->
-        <p><label for="elfogad">Elfogad </label>
-          <input type="checkbox" name="elfogad" class="urlap">
-      </p>
+        <div><label>Elfogadom a feltételeket.<input type="checkbox" name="elfogad" class="urlap"></label></div>
+          
+      
         <label>
           <p class="felirat">
             <input type="submit" name="feliratkozott" class="gomb" value="Feliratkozom">
