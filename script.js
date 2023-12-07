@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function socialMediaGomb(socialMedia) {
         megosztasGomb(socialMedia, function () {
-            megosztasSocialMediaval(socialMedia);
+            meg+osztasSocialMediaval(socialMedia);
         });
     }
 

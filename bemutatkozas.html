@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="author" content="Veress Mária">
+    <meta name="copyright" content="Tanulmányi és oktatási célokra">
     <meta name="description" content="Global Outreach Hungary weboldala (html beadandó)">
-    <link rel="icon" href="images/favicon.ico " type="image/x-icon">
-    <title> Global Outreach Magyarország | Let&#39s build a civilization of love </title>
-    <title> Global Outreach Magyarország | Let &#39 s build a civilization of love </title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title> Global Outreach Magyarország | Let&#39;s build a civilization of love </title>
 
     <script src="script.js"></script>
 
     <script src="jquery-3.7.1.js"></script>
     <script src="galleria-1.6.1/dist/galleria.js"></script>
     <script src="galleria-1.6.1/dist/themes/classic/galleria.classic.js"></script>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function () {
             $('#fotoalbum').galleria(
                 width = 200,
@@ -54,8 +54,8 @@
     </div>
 
 
-    <div class="flex-container">
-        <header class="nagy-cim">
+    <div class="flex-container nagy-cim">
+        <header>
             <h1>KIK VAGYUNK MI?</h1>
         </header>
     </div>
@@ -215,7 +215,12 @@
             <p class="kozepre"><i>Hálásan köszönünk mindennemű pénzügyi támogatást és adományt.</i></p>
         </aside>
     </div>
- 
+    <div class="flex-container megosztas">
+        <h2>Ha megtetszett a programunk, oszd meg kedves ismerőseiddel!</h2>
+        <br>
+        <textarea id="uzenet" placeholder="Üzenet..." class="urlap"></textarea>
+        <div id="megosztas" class="megosztas_gomb"></div>
+    </div>
     <div class="socialmedia">
         <h3>Kövess minket itt:</h3>
         <div class="ikonok">
@@ -238,12 +243,12 @@
         <div>
             <h2>Kapcsolat:</h2>
             <p><b>
-                    <a href="mailto:info@globaloutreach.hu">info@globaloutreach.hu<br>
+                    <a href="mailto:info@globaloutreach.hu">info@globaloutreach.hu<br></a>
                         <a href="https://www.globaloutreachprogram.com/">https://www.globaloutreachprogram.com/</a><br>
-                        <a href="tel:+36 20 479 0566">+36 20 479 0566</a>
+                        <a href="tel:+36204790566">+36 20 479 0566</a>
                 </b></p>
         </div>
-
+      
         <div>
             <button onclick="fel()" id="tetejere" title="Vissza a tetejére">
                 <img src="images/visszanyil.png" class="visszanyil" alt="Felfele nyil">
@@ -251,16 +256,16 @@
                 <img src="images/visszanyil.png" class="visszanyil" alt="Felfele nyil">
             </button>
         </div>
-    </footer>
-
-    <script>
+      </footer>
+      
+      <script>
         let felgomb = document.getElementById("tetejere");
         function fel() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
-    </script>
-
-</body>
-
-</html>
+      </script>
+      
+      </body>
+      
+      </html>

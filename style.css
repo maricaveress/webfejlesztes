@@ -32,15 +32,15 @@
 }
 
 html {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
 }
 
 body {
     background-color: #b5e1f7;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 
     display: flex;
     flex-direction: column;
@@ -155,15 +155,16 @@ body {
     justify-content: center;
     align-items: center;
     width: 97vw;
+    max-width:100%;
 }
 
 .jobboldal {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin:0px;
+    margin: 0;
     padding: 10px;
-    width:100%;
+    width: 100%;
 }
 
 aside {
@@ -181,20 +182,20 @@ aside {
 .flex-container {
     background: white;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
-    max-width: 100vw;
-
+    
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
 }
 
 p,
-ul {
-    margin: 0px;
+ul, h2 {
+    margin: 0;
     padding: 5px 20px;
     text-align: justify;
 }
@@ -210,6 +211,11 @@ a:hover {
 
 .spacearound {
     justify-content: space-around;
+}
+
+.nagy-cim{
+    width:96%;
+    justify-content: center ;
 }
 
 h1 {
@@ -235,7 +241,7 @@ h3 {
     font-size: 1.5em;
     font-family: "cimsor";
     text-transform: uppercase;
-    margin: 0px;
+    margin: 0;
     padding: 15px;
 }
 
@@ -244,7 +250,7 @@ h3 {
 }
 
 .oldalgalleriam {
-    display:none;
+    display: none;
 }
 
 .kozepre {
@@ -361,7 +367,7 @@ hr {
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    padding: 0px;
+    padding: 0;
 }
 
 .ikonok a {
@@ -385,16 +391,16 @@ hr {
     height: 30px;
 }
 
-.gomb, button {
+.gomb,
+button {
     background-color: #42abe0d4;
     color: white;
-    position: relative;
     text-align: center;
     font-size: 1em;
     font-family: "szoveg";
     text-decoration: none;
     padding: 10px;
-    margin-left:10px;
+    margin-left: 10px;
     width: max-content;
     transition-duration: 0.4s;
     border: none;
@@ -411,9 +417,9 @@ hr {
     flex-direction: column;
     align-items: center;
     font-family: "szoveg";
-    margin: 0px;
+    margin: 0;
     padding: 10px;
-    max-width: 500px;
+    width:90vw;
 }
 
 #feliratkozas div {
@@ -430,10 +436,11 @@ hr {
     border-radius: 5px;
     color: black;
     cursor: pointer;
+    align-items: center;
 }
 
 form div {
-    margin: 10px 0px;
+    margin: 10px 0;
     max-width: 100vw;
 }
 
@@ -448,17 +455,12 @@ form div {
     margin-bottom: 10px;
 }
 
-.felirat {
-    padding: 6px;
-    text-align: center;
-}
-
 
 /*LABLECHEZ*/
 footer {
     background-color: #42abe086;
     width: 100%;
-    padding: 0px 15px 5px;
+    padding: 0 15px 5px;
 
     display: flex;
     align-items: center;
@@ -478,7 +480,7 @@ footer div h2 {
 }
 
 footer h2 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 footer div button {
@@ -523,7 +525,7 @@ footer div button {
     font-weight: bold;
     font-style: italic;
     text-align: center;
-    margin: 0px 70px;
+    margin: 0 70px;
     padding: 10px;
 }
 
@@ -540,11 +542,14 @@ footer div button {
 
 
 /*megosztashoz*/
-textarea{
-    resize:none;
-    height:70px;
-    width:65vw;
-    }
+textarea {
+    resize: none;
+    height: 70px;
+    width: 70vw;
+}
+.megosztas{
+    width:94vw;
+}
 
 /*GALLERIAHOZ*/
 
@@ -552,7 +557,7 @@ textarea{
     margin: 10px;
     height: 95vh;
     max-height: 320px;
-    width: 97vw;
+    width: 55vw;
     max-width: 600px;
 }
 
@@ -577,10 +582,10 @@ textarea{
     /*MENU**/
     #menu a {
         position: absolute;
-        left: 0px;
+        left: 0;
         width: 220px;
-        border-radius: 0px 5px 5px 0px;
-        margin: 0px;
+        border-radius: 0 5px 5px 0;
+        margin: 0;
         opacity: 1;
     }
 
@@ -644,7 +649,7 @@ textarea{
     }
 
     .oldalgalleriam {
-        display:block;
+        display: block;
         margin: 10px;
         max-height: 280px;
         max-width: 25vw;
@@ -653,12 +658,9 @@ textarea{
     }
 
 
-    #feliratkozas .sor {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 40vw;
+
+    textarea{
+        width: 30vw;
     }
 
     footer {
@@ -670,5 +672,4 @@ textarea{
     footer div h2 {
         text-align: left;
     }
-
 }

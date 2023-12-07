@@ -1,0 +1,11 @@
+1. Oldal készítője: Veress Mária
+
+2. Weblap URL címe: https://maricaveress.github.io/webfejlesztes/
+
+3. Rövid leírás: Weboldalam a Global Outreach cserediák program alternatív weboldala. Tartalmazza a főoldalt, hírek, pályázat, gyakori kérdések, bemutatkozás oldalt, valamint egy űrlapot, amivel fel lehet iratkozni a hírlevélre és egy megosztásra alkalmas szövegdobozt és gombot.
+
+4. JavaScript kód: A bemutatkozás oldalon, miután a delhasználó elolvasta az alapvető információkat, lehetősége van szöveget írni és azt különféle közösségi méfia felületeken megosztani. A kód gyártja le a gombokat attól függően, hogy a böngésző támogatja e a Web Share API funkciót.
+
+5. A használt fonttípus forrása: A https://www.1001freefonts.com/ oldaláról töltöttem le az ingyenesen felhasználható Raleway fontcsaládot, ezt töltöttem be css-be és hasnzáltam fel mindenhol.
+
+6. A weboldal szövege és képei - a favicont is beleértve - jelentős mértékben forrásul veszik a Global Outreach magyar(https://globaloutreach.hu/) és angol (https://globaloutreachprogram.com/) weboldalakat. A közösségi média ikonjait pedig a https://csakegyet.hu/ oldaláról hasnzáltam fel.
