@@ -1,4 +1,5 @@
-/*SAJÁT FONTKÉSZLET*/
+/*SAJAT FONTKESZLET*/
+
 @font-face {
     font-family: "szoveg";
     src: url('fonts/Raleway-Regular.ttf');
@@ -25,8 +26,6 @@
 }
 
 
-/*Ez biztosítja, hogy az elemekhez tartozó padding és border a width és height értékekhez is.
-    Ennek hiányában az elemek átcsúszhatnak a következő sorba*/
 
 * {
     box-sizing: border-box;
@@ -36,7 +35,6 @@ html {
     margin: 0px;
     padding: 0px;
     scroll-behavior: smooth;
-    /*finomabban görög le*/
 }
 
 body {
@@ -50,19 +48,17 @@ body {
 
     font-size: 1em;
     line-height: 1.5em;
-    /*másfeles sorköz*/
     font-family: "szoveg";
-    /*alapértelmezett is, balra igazított szöveg*/
 }
 
 
-/*FEJLÉC LOGÓVAL*/
+/*FEJLEC LOGOVAL*/
+
 .fejlec {
     background-color: white;
     width: 100%;
     height: 347px;
     padding-top: 30px;
-    /*fejléc ne legyen rögtön az oldal szélén, hanem legyen körülvéve üres résszel*/
     text-align: center;
 }
 
@@ -71,77 +67,24 @@ body {
 }
 
 
-/*MENÜ*/
+/*MENU*/
+
 #menu a {
     display: flex;
     justify-content: center;
     margin: 10px;
-    /*legyen kezdetben kívül a képernyőn*/
     padding: 15px;
-    transition: 0.5s;
     width: 70vw;
     background-color: #42abe0d4;
     border-radius: 5px;
     color: white;
     font-size: 19px;
-    /*nagyobb*/
     font-family: "menu";
-    text-align: center;
-    text-decoration: none;
-    /*ne legyen aláhúzás*/
     opacity: 0;
 }
 
-#menu a:hover {
-    background-color: #267ba6;
-    /*ha fölé megyek egérrel, sötétebb lesz a színe*/
-}
-
-
-#menu a.animation {
-    animation: slideIn 0.5s ease-in-out forwards;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-#menu a.animation:nth-child(1) {
-    animation-delay: 0.5s;
-}
-
-#menu a.animation:nth-child(2) {
-    animation-delay: 1s;
-}
-
-#menu a.animation:nth-child(3) {
-    animation-delay: 1.5s;
-}
-
-#menu a.animation:nth-child(4) {
-    animation-delay: 2s;
-}
-
-#menu a.animation:nth-child(5) {
-    animation-delay: 2.5s;
-}
-
-/*jelenjenek meg a menüszalagok, ne legyenek már eltolva*/
-
-
-
-/* The about link: 20px from the top with a green background */
 #hirek {
     top: 360px;
-    /*+345*/
 }
 
 #palyazat {
@@ -161,70 +104,97 @@ body {
 }
 
 
+/*MENÜ ANIMÁCIÓJA TELEFONON*/
+
+#menu a.animacio {
+    animation: beuszik 0.5s ease-in-out forwards;
+}
+
+@keyframes beuszik {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#menu a.animacio:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+#menu a.animacio:nth-child(2) {
+    animation-delay: 1s;
+}
+
+#menu a.animacio:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+#menu a.animacio:nth-child(4) {
+    animation-delay: 2s;
+}
+
+#menu a.animacio:nth-child(5) {
+    animation-delay: 2.5s;
+}
 
 
-/**/
+#menu a:hover {
+    background-color: #267ba6;
+}
+
 
 .reszponziv {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    width: 97vw;
 }
-
-/*fehér dobozok középen legyenek*/
-
-
 
 .jobboldal {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    margin: 0px;
     padding: 10px;
 }
 
-.flex-container,
-.oszlopok,
 aside {
     background: white;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.flex-container {
+    background: white;
+    display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    justify-content: space-around;
     text-align: center;
     align-items: center;
-    margin-bottom: 20px;
+    width: 95%;
+
+    margin: 10px;
     padding: 10px;
     border-radius: 5px;
-    width: 97%;
-    margin: 10px;
 }
 
-
-
-.sorban {
-    display: block;
-    align-items: flex-start;
-}
-
-article {
-    justify-content: center;
-    padding: 10px;
+p,
+ul {
+    margin: 0px;
+    padding: 5px 20px;
     text-align: justify;
 }
-
-p {
-    margin: 0px;
-    padding: 3px 20px;
-}
-
-.mese {
-    margin-bottom: 20px;
-}
-
 
 a {
     color: #267ba6;
@@ -235,48 +205,17 @@ a:hover {
     color: rgb(3, 52, 85);
 }
 
-
-
-.hirek {
-    background: white;
-    flex-wrap: wrap;
+.spacearound {
     justify-content: space-around;
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 2%;
-    width: 100%;
 }
 
-
 h1 {
-    display: flex;
-    justify-content: center;
-    text-align: center;
     color: #267ba6b7;
     font-size: 2em;
     font-family: "cimsor";
-    width: 100%;
     margin: 10px;
     padding: 10px;
     line-height: 1.5;
-}
-
-.kozepso-cim header {
-    border: 4px solid #267ba6b7;
-    border-radius: 4px;
-    padding: 10px;
-}
-
-.kozepso-cim {
-    text-decoration: none;
-}
-
-.kozepso-cim header:hover {
-    border: 4px solid #267ba6;
-}
-
-.kozepso-cim:hover h1 {
-    color: #267ba6;
 }
 
 h2,
@@ -289,149 +228,28 @@ h2,
     text-align: left;
 }
 
-.kerdesek {
-    text-align: left;
-}
-
 h3 {
     font-size: 1.5em;
     font-family: "cimsor";
     text-transform: uppercase;
     margin: 0px;
     padding: 15px;
-    align-items: center;
 }
 
-img {
-    vertical-align: middle;
-}
-
-
-
-figure {
-    display: flex;
+.tamogatas {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 2%;
 }
 
-
-.zoom {
-    display: flex;
-    align-items: center;
-    min-width: .5vw;
-    max-width: 80%;
-    text-align: center;
-    margin: 0px auto 10px auto;
-    transition: transform 1s;
-    border-radius: 4px;
-}
-
-.zoom:hover {
-    transform: scale(1.03);
-}
-
-figcaption {
-    text-align: center;
-    font-size: 0.7em;
-    font-style: italic;
-    line-height: 1em;
-    margin: 10px;
-}
-
-
-
-
-
-/*nem vagyok benne biztos, hogy ez kell*/
-
-
-.oszlop {
-    padding: 5px;
-    border: 2px solid #a9a9a9;
-    border-radius: 4px;
-    box-shadow: 6px 6px #a9a9a9;
-    /*doboz árnyéka*/
-    margin: 20px;
-}
-
-
-hr {
-    border: 2px solid #a9a9a9;
-    border-radius: 4px;
-    width: 98%;
-}
-
-
-/*galleria------------- reszponziv legyen!!!*/
-
-.galleriam,
 .oldalgalleriam {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin: 10px;
-    /* Center the gallery horizontally */
-    height: 95vh;
-    /* Set the height as a percentage of the viewport width */
-    max-height: 320px;
-    width: 70vw;
-    /* Make the gallery container responsive */
-    max-width: 600px;
+    display:none;
 }
 
-.oldalgalleria {
-    justify-content: center;
-}
-
-
-
-/* Additional styling for images within the gallery */
-.galleriam img,
-.oldalgalleriam img {
-    max-width: 100%;
-    /* Ensure images don't exceed the container width */
-    max-height: auto;
-    /* Maintain aspect ratio of images */
-}
-
-
-
-
-/*TÁMOGATÁS*/
-aside {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 100%;
-    /*ez miz jelent pontosan*/
-    justify-content: center;
-    margin: 20px;
-    padding: 20px;
-    max-width: fit-content;
+.kozepre {
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .fizetes {
     background-color: #a9a9a9;
-    /*ide rendes színt*/
     color: black;
     display: block;
     flex-wrap: nowrap;
@@ -439,50 +257,90 @@ aside {
     padding: 6px;
     border-radius: 5px;
     line-height: 2em;
-    text-decoration: none;
 }
 
 .paypal {
     height: 18px;
 }
 
-.kozepre {
-    text-align: center;
+
+
+/*FOOLDALHOZ*/
+
+/*főképhez*/
+figure {
+    display: flex;
+    flex-direction: column;
+
 }
 
+figure img {
+    max-width: 80%;
+    margin-bottom: 10px;
+    transition: transform 0.5s;
+    border-radius: 4px;
+}
 
-/*socialmedia*/
-.ikonok {
+figure img:hover {
+    transform: scale(1.03);
+}
+
+figcaption {
+    font-size: 0.7em;
+    font-style: italic;
+    line-height: 1em;
+    margin: 10px;
+}
+
+/*bemutatkozashoz*/
+hr {
+    border: 2px solid #a9a9a9;
+    border-radius: 4px;
+    width: 98%;
+}
+
+/*hirekhez*/
+.hirek {
+    background: white;
+    margin-bottom: 20px;
+    padding: 2%;
+}
+
+.keret header {
+    display: flex;
+    justify-content: center;
+    border: 4px solid #267ba6b7;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.keret header:hover {
+    border: 4px solid #267ba6;
+}
+
+.keret:hover h1 {
+    color: #267ba6;
+}
+
+.oszlopok {
+    background: white;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
     text-align: center;
-    padding: 0px;
+    border-radius: 5px;
 }
 
-
-.ikonok a {
-    display: inline-block;
-    padding: 20px;
+.oszlop {
+    padding: 5px;
+    border: 2px solid #a9a9a9;
+    border-radius: 4px;
+    box-shadow: 6px 6px #a9a9a9;
+    margin: 20px;
 }
 
-.ikonok a img {
-    -webkit-transition: all 500ms ease;
-    /*mit jelent pontosan és mire jó*/
-    transition: all 500ms ease;
-    display: block;
-    width: 45px;
-    height: 45px;
-}
-
-.ikonok a:hover img {
-    transform: scale(1.4);
-}
-
+/*social mediahoz*/
 .socialmedia {
     background-color: #267ba6b7;
-    /*ide rendes színt*/
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -494,15 +352,56 @@ aside {
     width: 100%;
 }
 
+.ikonok {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+}
+
+.ikonok a {
+    display: inline-block;
+    padding: 20px;
+}
+
+.ikonok a img {
+    transition: all 500ms ease;
+    display: block;
+    width: 45px;
+    height: 45px;
+}
+
+.ikonok a:hover img {
+    transform: scale(1.4);
+}
+
 .socials {
     cursor: pointer;
     height: 30px;
 }
 
+.gomb, button {
+    background-color: #42abe0d4;
+    color: white;
+    position: relative;
+    text-align: center;
+    font-size: 1em;
+    font-family: "szoveg";
+    text-decoration: none;
+    padding: 10px;
+    width: max-content;
+    transition-duration: 0.4s;
+    border: none;
+    border-radius: 5px;
+}
 
+.gomb:hover {
+    background-color: #267ba6;
+}
 
-
-/*FELIRATKOZÁS A HÍRLEVÉLRE*/
+/*hirlevelhez*/
 .hirlevel {
     display: flex;
     flex-direction: column;
@@ -527,20 +426,17 @@ aside {
     border-radius: 5px;
     color: black;
     cursor: pointer;
-    justify-content: center;
 }
 
 form div {
     margin: 10px 0px;
     max-width: 100vw;
-
 }
 
 
 .label.error {
     color: #B55567;
 }
-
 
 .kicsi {
     font-size: 0.8em;
@@ -554,48 +450,10 @@ form div {
 }
 
 
-
-
-
-
-
-
-
-.gomb {
-    background-color: #42abe0d4;
-    color: white;
-    position: relative;
-    text-align: center;
-    font-size: 1em;
-    font-family: "szoveg";
-    text-decoration: none;
-    padding: 10px;
-    width: max-content;
-    -webkit-transition-duration: 0.4s;
-    /* Safari */
-    transition-duration: 0.4s;
-    overflow: hidden;
-    /*ez mit jelent*/
-    cursor: pointer;
-    /*mutató kis kezecske jelenik meg*/
-    border: none;
-    border-radius: 5px;
-}
-
-.gomb:hover {
-    background-color: #267ba6;
-}
-
-
-
-
-
-
-/*LÁBLÉC*/
+/*LABLECHEZ*/
 footer {
     background-color: #42abe086;
     width: 100%;
-    /*faltól falig érjen*/
     padding: 0px 15px 5px;
 
     display: flex;
@@ -608,13 +466,11 @@ footer {
 
 footer div {
     padding-top: 10px;
-    /*legyen egy kis hely a footer tetején*/
 }
 
 footer div p,
 footer div h2 {
     text-align: center;
-    /*szövegek középre telefonon*/
 }
 
 footer h2 {
@@ -626,7 +482,7 @@ footer div button {
 }
 
 
-/*VISSZA A TETEJÉRE GOMB A LÁBLÉCBEN*/
+/*VISSZA A TETEJERE GOMBHOZ*/
 #tetejere {
     background-color: rgba(48, 137, 181, 0.605);
     width: 130px;
@@ -655,12 +511,8 @@ footer div button {
     max-height: 10px;
 }
 
+/*BEMUTATKOZAS OLDALHOZ*/
 
-
-
-
-
-/*bemutatkozashoz*/
 .idezet {
     font-family: "idezet";
     font-size: 1.1em;
@@ -671,6 +523,10 @@ footer div button {
     padding: 10px;
 }
 
+.mese p {
+    margin-bottom: 20px;
+}
+
 .fontos {
     font-weight: bold;
     font-size: 1.2em;
@@ -678,23 +534,55 @@ footer div button {
 }
 
 
+/*GALLERIAHOZ*/
 
-
-
-
-
-/*---reszponzivitás------------------
------------------------------------------------------
-------------------------------------------
------------------------------------------
-------------------------------------------------
-
-/*A @media szabályt használja arra, hogy olyan változásokat írjon le, amelyek csak bizonyos feltételek mellett érvényesek.*/
-
-@media only screen and(min-width: 600px) {
-    /* tabletre */
+.galleriam {
+    margin: 10px;
+    height: 95vh;
+    max-height: 320px;
+    width: 97vw;
+    max-width: 600px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+textarea{
+resize:none;
+height:70px;
+width:65vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*RESZPONZIVITAS*/
 
 @media only screen and (min-width: 768px) {
     /* számítógépre */
@@ -720,7 +608,7 @@ footer div button {
         opacity: 1;
     }
 
-    #menu a.animation {
+    #menu a.animacio {
         animation: none;
     }
 
@@ -744,53 +632,26 @@ footer div button {
         top: 255px;
     }
 
-
-
-
-
-
-
-    /*oszlopok*/
-    .oszlopok {
-        display: flex;
-        flex-basis: 33.33%;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-    }
-
-    .oszlop {
-        width: 50%;
-    }
-
-
-    .kontent {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    /*Támogatás mellette legyen*/
-
     .reszponziv {
-        padding-top: 0px;
-        display: flex;
         flex-direction: row;
         align-items: flex-start;
-        width: 100%;
     }
 
     .jobboldal {
-        flex-basis: 70%;
-        max-width: 65%;
+        max-width: 65vw;
     }
 
     aside {
-        max-width: 30%;
+        max-width: 30vw;
     }
 
     .hirek {
-        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .oszlopok {
+        flex-wrap: nowrap;
+
     }
 
     .socialmedia {
@@ -798,7 +659,7 @@ footer div button {
     }
 
     .ikonok {
-        width: 50%;
+        flex-basis: 50%;
     }
 
     .galleriam {
@@ -807,37 +668,23 @@ footer div button {
     }
 
     .oldalgalleriam {
+        display:block;
+        margin: 10px;
         max-height: 280px;
-        max-width: 300px;
-    }
-
-    .oldalgalleria {
         max-width: 25vw;
+        height: 95vh;
+        width: 25vw;
     }
 
 
-
-
-
-
-    #feliratkozas .row {
+    #feliratkozas .sor {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-
-        width: 70vw;
+        width: 40vw;
     }
 
-
-
-
-
-
-
-
-
-    /*footer számítógépen több oszlopban legyen*/
     footer {
         flex-direction: row;
         justify-content: space-between;
@@ -846,7 +693,6 @@ footer div button {
     footer div p,
     footer div h2 {
         text-align: left;
-        /*szövegek balról számítógépen*/
     }
 
 }
