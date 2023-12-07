@@ -73,75 +73,91 @@ body {
 
 /*MENÜ*/
 #menu a {
-    position: absolute;
-    left: -160px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
     /*legyen kezdetben kívül a képernyőn*/
     padding: 15px;
     transition: 0.5s;
-    width: 180px;
+    width: 70vw;
     background-color: #42abe0d4;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 5px;
     color: white;
     font-size: 19px;
     /*nagyobb*/
     font-family: "menu";
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     /*ne legyen aláhúzás*/
+    opacity: 0;
 }
 
 #menu a:hover {
     background-color: #267ba6;
     /*ha fölé megyek egérrel, sötétebb lesz a színe*/
-    left: 0px;
-
-
-    #menu a.animation {
-        animation: slideIn 0.5s ease-in-out forwards;
-    }
-    
-    @keyframes slideIn {
-        from {
-            left: -160px;
-        }
-        to {
-            left: 0;
-        }
-    }
-    
-    /* Add a class to the menu items to trigger the animation on load */
-    #menu a:nth-child(1) { animation-delay: 0.5s; }
-    #menu a:nth-child(2) { animation-delay: 1s; }
-    #menu a:nth-child(3) { animation-delay: 1.5s; }
-    #menu a:nth-child(4) { animation-delay: 2s; }
-    #menu a:nth-child(5) { animation-delay: 2.5s; }
-
-    
-
-    /*jelenjenek meg a menüszalagok, ne legyenek már eltolva*/
-
 }
+
+
+#menu a.animation {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#menu a.animation:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+#menu a.animation:nth-child(2) {
+    animation-delay: 1s;
+}
+
+#menu a.animation:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+#menu a.animation:nth-child(4) {
+    animation-delay: 2s;
+}
+
+#menu a.animation:nth-child(5) {
+    animation-delay: 2.5s;
+}
+
+/*jelenjenek meg a menüszalagok, ne legyenek már eltolva*/
+
 
 
 /* The about link: 20px from the top with a green background */
 #hirek {
-    top: 15px;
+    top: 360px;
+    /*+345*/
 }
 
 #palyazat {
-    top: 75px;
+    top: 420px;
 }
 
 #gyik {
-    top: 158px;
+    top: 480px;
 }
 
 #usa {
-    top: 218px;
+    top: 540px;
 }
 
 #bemutatkozas {
-    top: 278px;
+    top: 600px;
 }
 
 
@@ -684,23 +700,38 @@ footer div button {
     /* számítógépre */
 
     /*FEJLEC*/
-    .fejlec{
+    .fejlec {
         height: 325px;
     }
-    .logo{
-        height:265px;
-        padding-left:60px;
+
+    .logo {
+        height: 265px;
+        padding-left: 60px;
     }
 
 
     /*MENU**/
     #menu a {
+        position: absolute;
         left: 0px;
         width: 220px;
-        text-align: center;
+        border-radius: 0px 5px 5px 0px;
+        margin: 0px;
+        opacity: 1;
     }
 
-    
+    #menu a.animation {
+        animation: none;
+    }
+
+    #hirek {
+        top: 15px;
+    }
+
+    #palyazat {
+        top: 75px;
+    }
+
     #gyik {
         top: 135px;
     }
@@ -742,6 +773,7 @@ footer div button {
     /*Támogatás mellette legyen*/
 
     .reszponziv {
+        padding-top: 0px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
