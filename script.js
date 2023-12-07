@@ -1,60 +1,62 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const shareButtonContainer = document.getElementById('megosztas');
-    const messageInput = document.getElementById('uzenet');
-    const url = window.location.href;
+    const gombom = document.getElementById('megosztas');
+    const uzenetem = document.getElementById('uzenet');
+    const urlem = 'https://maricaveress.github.io/webfejlesztes/';
 
-    // Check if the Web Share API is supported
     if (navigator.share) {
-        createShareButton('Megosztás', shareUsingWebShareAPI);
+        megosztasGomb('Megosztás', megosztasLinkkel);
     } else {
-        console.log('Web Share API is not supported on this browser.');
-        createSocialMediaShareButton('Facebook');
-        createSocialMediaShareButton('Twitter');
-        createSocialMediaShareButton('Instagram'); // Added Instagram button
+        socialMediaGomb('Facebook');
+        socialMediaGomb('Gmail');
+        socialMediaGomb('Twitter');
+        socialMediaGomb('WhatsApp');
+
     }
 
-    function createShareButton(label, clickHandler) {
+    function megosztasGomb(label, clickHandler) {
         const button = document.createElement('button');
         button.innerText = label;
         button.addEventListener('click', clickHandler);
-        shareButtonContainer.appendChild(button);
+        gombom.appendChild(button);
     }
 
-    function createSocialMediaShareButton(socialMedia) {
-        createShareButton(socialMedia, function () {
-            shareUsingSocialMedia(socialMedia);
+    function socialMediaGomb(socialMedia) {
+        megosztasGomb(socialMedia, function () {
+            megosztasSocialMediaval(socialMedia);
         });
     }
 
-    function shareUsingWebShareAPI() {
+    function megosztasLinkkel() {
         navigator.share({
-            title: 'Your Exchange Program',
-            text: messageInput.value || 'Check out this exchange program!',
-            url: url
-        })
-        .then(() => console.log('Successfully shared'))
-        .catch((error) => console.error('Error sharing:', error));
+            title: 'Szuper cserediák program!',
+            text: uzenetem.value || 'Ezt nézd, mire bukkantam!',
+            url: urlem
+        });
     }
-    function shareUsingSocialMedia(socialMedia) {
-        let socialMediaUrl;
-    
+
+    function megosztasSocialMediaval(socialMedia) {
+        let socialMediaLink;
+
         switch (socialMedia) {
             case 'Facebook':
-                socialMediaUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+                socialMediaLink = `https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F` + encodeURIComponent(url) + `!%2F`;
+                break;
+            case 'Gmail':
+                socialMediaLink = 'mailto:?subject=' + encodeURIComponent('Szuper cserediák program!') +
+                    '&body=' + encodeURIComponent(uzenetem.value || 'Ezt nézd, mire bukkantam!\n\n' + url);
                 break;
             case 'Twitter':
-                socialMediaUrl = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(messageInput.value || 'Check out this exchange program!');
+                socialMediaLink = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(uzenetem.value || 'Ezt nézd, mire bukkantam!!');
                 break;
-            case 'Instagram':
-                // Adjust this link according to your Instagram sharing needs
-                socialMediaUrl = 'https://www.instagram.com/';
+            case 'WhatsApp':
+                socialMediaLink = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('Szuper cserediák program! ' + (uzenetem.value || '') + '\n\n' + url);
                 break;
             default:
                 break;
         }
 
-        if (socialMediaUrl) {
-            window.open(socialMediaUrl, '_blank', 'width=600,height=400');
+        if (socialMediaLink) {
+            window.open(socialMediaLink, '_blank', 'width=700,height=500');
         }
     }
 });
