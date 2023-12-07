@@ -45,6 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     font-size: 1em;
     line-height: 1.5em;
@@ -160,7 +161,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin:0px;
     padding: 10px;
+    width:100%;
 }
 
 aside {
@@ -182,7 +185,7 @@ aside {
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
-    width: 95%;
+    max-width: 100vw;
 
     margin: 10px;
     padding: 10px;
@@ -391,6 +394,7 @@ hr {
     font-family: "szoveg";
     text-decoration: none;
     padding: 10px;
+    margin-left:10px;
     width: max-content;
     transition-duration: 0.4s;
     border: none;
@@ -534,6 +538,14 @@ footer div button {
 }
 
 
+
+/*megosztashoz*/
+textarea{
+    resize:none;
+    height:70px;
+    width:65vw;
+    }
+
 /*GALLERIAHOZ*/
 
 .galleriam {
@@ -543,42 +555,6 @@ footer div button {
     width: 97vw;
     max-width: 600px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-textarea{
-resize:none;
-height:70px;
-width:65vw;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
